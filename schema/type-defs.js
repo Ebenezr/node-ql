@@ -11,6 +11,17 @@ const typeDefs = gql`
     favoriteMovies: [Movie!]
   }
 
+  input CreateUserInput {
+    name: String!
+    email: String!
+    age: Int!
+    nationality: Nationality = KENYA
+  }
+
+  type Mutation {
+    createUser(input: CreateUserInput!): User!
+  }
+
   type Movie {
     id: ID!
     title: String!
